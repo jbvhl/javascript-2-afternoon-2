@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr) {
+return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr) {
+return arr[arr.length - 1];
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper(family) {
+  for (var i = 0; i < family.length; i++) {
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -61,9 +69,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Write a function called reversedLooper that is given letters as it's only argument. 
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
-
 //Code Here
-
+function reversedLooper(letters) {
+  for (let i = letters.length - 1; i >= 0; i--) {
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +89,19 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+function evenFinder(nums) {
+ var evens = [];
 
+ for (var i = 0; i < nums.length; i++) {
+  var num = nums[i];
+  
+  if (num % 2 === 0) {
+    evens.push(num)
+  }
+ }
+
+ return evens;
+}
 
 
 
@@ -106,7 +129,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray) {
+  var evens = [];
+  var odds = [];
+  var arrs = [];
 
+  for (var i = 0; i < numbersArray.length; i++) {
+    var num = numbersArray[i];
+    if (num % 2 === 0) {
+      evens.push(num)
+    } else {
+      odds.push(num)
+    }
+  }
+
+  arrs.push(evens, odds);
+  return arrs;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -127,7 +166,16 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(arr) {
+  
+  for (var i = 0; i < arr.length; i++) {
 
+    if (arr.indexOf(getRandomArbitrary()) > -1) {
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -156,7 +204,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if (!myGroceryList || !item) {
+    return []
+  }
+  if (myGroceryList.indexOf(item) > -1) {
+    myGroceryList.splice(item, 1);
+  }
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item) {
+  if (!myGroceryList || !item) {
+    return []
+  }
+  if (!myGroceryList.indexOf(item)) {
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -166,7 +232,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker() {
+  var arr = [];
 
+  for (var i = 1; i <= 215; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -182,7 +255,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen(numArr) {
+  var newArr = [];
 
+  for (var i = 0; i < numArr.length; i++) {
+    var num = Number(numArr[i]) + 10;
+    
+    newArr.push(num);
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -207,7 +289,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  } else {
+    return arr2;
+  }
+}
 
 
 /*
@@ -219,7 +307,19 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2) {
+  var match = [];
 
+  for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        match.push(arr1[i]);
+      }
+    }
+  }
+
+  return match;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -259,7 +359,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -268,7 +369,13 @@ var colt = {
 */
 
 //Code Here
-
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1);
+    console.log(cahlan);
+  }
+}
+console.log(devMountainEmployees.length);
 
 
 ////////// PROBLEM 13 //////////
@@ -280,6 +387,7 @@ var colt = {
 */
 
 //Code Here
+var users = [];
 
 
 
@@ -299,8 +407,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Tylter McGinnisa',
+  email: 'tylermcginnis333@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'
+};
 
+var user3 = {
+  name: 'Tyleer McGinnisw',
+  email: 'tylermcginnis343@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'
+};
 
+users.push(user1, user2, user3); 
 
 /*
   Now you have a very common data structure. 
@@ -313,7 +434,11 @@ var user1 = {
 */
 
 //Code Here
-
+for (var i = 0; i < users.length; i++) {
+  if (users[i].email === 'tylermcginnis33@gmail.com' ) {
+    users.splice(i, 1);
+  }
+}
 
 
 /*
